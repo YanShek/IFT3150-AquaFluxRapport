@@ -19,38 +19,23 @@ title: Suivi du projet
 
 ---
 
-## Semaine 1 (12–18 janvier)
+## Semaine 1 (13–19 janvier)
 
 ### Objectifs de la période
-- Clarifier la problématique
-- Explorer les solutions existantes
-- Produire un premier prototype conceptuel
+- Comprehension initiale du projet
+
 
 ### Travail réalisé
 
-!!! abstract "Avancement"
-    - [x] Analyse de solutions existantes
-        - Comparaison de trois outils similaires
-    - [x] Prototype basse fidélité (Figma)
-    - [ ] Validation utilisateur
-        - Reportée à la semaine suivante
+- Lecture des rapports des étudiants precedents
+- Lecture et tentative de comprehension des notebooks
+- Visite chez ÉAU pour avoir une compréhension concrète du système avec une attention particulière sur la minéralisation.
 
 ### Décisions et ajustements
 
-> À compléter uniquement si des choix structurants ont été faits
-> ou si l’orientation du projet a évolué.
-
-!!! info "Décisions"
-    - Abandon de l’approche X jugée trop complexe
-    - Reformulation de la problématique suite aux premières analyses
+- Creation d'un nouveau script pour pouvoir chercher l'information du site maia-app.ca, notamment sur la temperature, l'ohp, et le pH de l'eau.
 
 ### Difficultés rencontrées
 
-> À compléter uniquement si des obstacles ont eu un impact réel
-> sur l’avancement du projet.
-
-!!! warning "Difficultés"
-    - Problème de configuration du plugin Mermaid
-        - Confusion entre `mkdocs-mermaid2-plugin` (pip)
-          et `mermaid2` (nom du plugin)
-        - Résolu après nettoyage et configuration correcte dans `mkdocs.yml`
+Probleme dans l'obtention du token de la base de donnes MAIA. Cela empeche l'execution des fichiers python pour obtenir des donnes.
+Résolution du probleme en utilisant les outils développeurs du navigateur. 
