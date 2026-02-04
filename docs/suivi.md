@@ -39,3 +39,18 @@ title: Suivi du projet
 
 Probleme dans l'obtention du token de la base de donnes MAIA. Cela empeche l'execution des fichiers python pour obtenir des donnes.
 Résolution du probleme en utilisant les outils développeurs du navigateur. 
+
+
+## Semaine 2 (19-27)
+### Objectifs de la période
+- Chargement des donnés et exploration des donnés.
+
+
+### Travail réalisé
+- Avec les informations de connexion pour InfluxDB, j'ai pu obtenir directement le token pour extraire les donnés.
+- Poursuite de la lecture des notebooks et comprendre ce qui a été fait.
+
+### Décisions et ajustements
+
+### Difficultés rencontrées
+- Je ne trouvais pas où se trouvait les données sur l'ajout de frass et donc j'ai perdu du temps à fouiller dans Influx et dans les 'sources' du site MAIA.
