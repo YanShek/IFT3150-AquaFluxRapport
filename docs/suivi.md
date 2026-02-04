@@ -54,3 +54,18 @@ Résolution du probleme en utilisant les outils développeurs du navigateur.
 
 ### Difficultés rencontrées
 - Je ne trouvais pas où se trouvait les données sur l'ajout de frass et donc j'ai perdu du temps à fouiller dans Influx et dans les 'sources' du site MAIA.
+
+## Semaine 3 (27-03)
+### Objectifs de la période
+- Telecharger les donnees, les nettoyer et comprehension des travaux precedents.
+
+
+### Travail réalisé
+- Utilisation des scripts pythons et les notebook existants pour etablir ce qui fonctionne et ne fonctionne pas.
+
+### Décisions et ajustements
+- J'ai decide de faire un notebook compilatoire base sur le code existant pour avoir ce qui fonctionne a un endroit.
+
+### Difficultés rencontrées
+- Comprendre ce qui a ete fait afin d'identifier ce qui est deprecie et ne fonctionne pas avec certitude.
+- La tentative a deviner l'intention derriere le code
