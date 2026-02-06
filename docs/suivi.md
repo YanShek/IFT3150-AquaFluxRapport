@@ -69,3 +69,4 @@ Résolution du probleme en utilisant les outils développeurs du navigateur.
 ### Difficultés rencontrées
 - Comprendre ce qui a ete fait afin d'identifier ce qui est deprecie et ne fonctionne pas avec certitude.
 - La tentative a deviner l'intention derriere le code
+- Le telechargement de donnes varie entre 2 ordinateurs. Sur la tour, il permet le telechargement de l'ensemble des donnes alors que sur le portable, il est restraint par un interval de temps
