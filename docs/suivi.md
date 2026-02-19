@@ -70,3 +70,35 @@ Résolution du probleme en utilisant les outils développeurs du navigateur.
 - Comprendre ce qui a ete fait afin d'identifier ce qui est deprecie et ne fonctionne pas avec certitude.
 - La tentative a deviner l'intention derriere le code
 - Le telechargement de donnes varie entre 2 ordinateurs. Sur la tour, il permet le telechargement de l'ensemble des donnes alors que sur le portable, il est restraint par un interval de temps
+
+## Semaine 4 (03-10)
+### Objectifs de la période
+- Televerser les donnes dans Google Drive
+- Documenter et valider le travail de l'etudiant precedent
+
+### Travail réalisé
+- Avec les informations de connexion pour InfluxDB, j'ai pu obtenir directement le token pour extraire les donnés.
+- Poursuite de la lecture des notebooks et comprendre ce qui a été fait.
+
+### Décisions et ajustements
+
+### Difficultés rencontrées
+- Je ne trouvais pas où se trouvait les données sur l'ajout de frass et donc j'ai perdu du temps à fouiller dans Influx et dans les 'sources' du site MAIA.
+
+## Semaine 5 (10-17)
+### Objectifs de la période
+- Creer un fichier de donnees bruts avec la temperature non-normalise
+
+### Travail réalisé
+- Reutilisation d'une partie du code d'un etudiant precedent pour enlever la compensation de la temperature d'une sonde.
+- Combiner cela avec le trvail precedent pour pouvoir avoir les donnes bruts: 
+- - On resamplait les donnees aux 5 minutes $\rightarrow$  On prend toutes les mesures
+- - On enleve la compensation de la temperature sur l'electroconductivite.
+
+### Décisions et ajustements
+- Comme il y avait plusieurs fichiers qui faisaient la meme affaire, j'en ai fait un global pour avoir une version finale de ce qui foncitonne.
+
+### Difficultés rencontrées
+- Il y avait plusieurs fichiers qui essayait d'accomplir une meme tache, mais il y a eu des mises a jours de la base de donnee rendant ces fonctionnalites invalide.
+- J'avais essaye de comprendre des fonctionnalites depreciees des fichiers pythons pour le projet.
+
