@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
@@ -979,41 +979,121 @@
 <div class="admonition info">
 <p class="admonition-title">Informations générales</p>
 <p><strong>Session</strong>: Hiver 2026<br />
-<strong>Auteur(s)</strong>: <!-- Nom de chaque membre (matricule)  --><br />
-<strong>Thème(s)</strong>: <!-- Thèmes principaux abordés dans le projet  --><br />
-<strong>Superviseur(s)</strong>: <!-- Nom du superviseur (affiliation)  --><br />
+<strong>Auteur(s)</strong>: <!-- Nom de chaque membre (matricule)  -->  Yan Shek - 20244110
+<strong>Thème(s)</strong>: <!-- Thèmes principaux abordés dans le projet  -->  Aquaponie, Mineralisation de l'eau, Bacteries
+<strong>Superviseur(s)</strong>: <!-- Nom du superviseur (affiliation)  -->  Fabian Bastin <br />
 <strong>Collaborateur(s):</strong> <!-- Nom de(s) collaborateur(s) et partenaire(s)` -->  </p>
 </div>
 <h2 id="description-du-projet">Description du projet<a class="headerlink" href="#description-du-projet" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p><img alt="💡" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4a1.png" title=":bulb:" /> N'oubliez pas d'effacer ou mettre en commentaires les notes (<code>&gt;</code>) en début de section</p>
-</blockquote>
+<!-- >> :bulb: N'oubliez pas d'effacer ou mettre en commentaires les notes (`>`) en début de section -->
+<p>L’aquaponie combine l’aquaculture et l’hydroponie en recyclant l’eau des bassins à poissons pour nourrir les plantes. Un élément clé de ce processus est la minéralisation, qui transforme les déchets organiques en nutriments assimilables par les plantes. Ce traitement s'effectue dans un réservoir anaérobie, dont le comportement est difficile à modéliser, mais qui peut être abordé comme une boîte noire, en se concentrant uniquement sur les composés en entrée et en sortie.</p>
 <h3 id="contexte">Contexte<a class="headerlink" href="#contexte" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>Présentez le contexte général dans lequel s’inscrit votre projet (social, organisationnel, technologique, éducatif, environnemental, etc.).</p>
-</blockquote>
+<!-- >> Présentez le contexte général dans lequel s’inscrit votre projet (social, organisationnel, technologique, éducatif, environnemental, etc.). -->
+<p>Ce projet s’inscrit dans un contexte environnemental et technologique visant à développer des systèmes alimentaires urbains plus durables. L’entreprise ÉAU (Écosystèmes Alimentaires Urbains) exploite un système aquaponique intégrant un réacteur de minéralisation pour optimiser le recyclage interne des nutriments. Cependant, le fonctionnement de ce réservoir repose sur des dynamiques biologiques et physico-chimiques complexes, influencées par la température, la quantité de frass ajouté et l’activité bactérienne.</p>
+<p>Sur le plan technologique, le système génère un grand volume de données issues de capteurs (électroconductivité, température, pH, ORP) stockées dans une base de données temporelle. Ce projet s’inscrit donc également dans une démarche de valorisation des données par l’analyse et l’apprentissage automatique afin d’améliorer la compréhension et le contrôle du système.</p>
 <h3 id="problematique">Problématique<a class="headerlink" href="#problematique" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>Décrivez le problème central ou la question de recherche que votre projet cherche à adresser, pourquoi s'y intéresser et les faiblesses des solutions actuelles. 
-Le problème doit pouvoir être compris indépendamment de la solution envisagée.</p>
-</blockquote>
+<!-- >> Décrivez le problème central ou la question de recherche que votre projet cherche à adresser, pourquoi s'y intéresser et les faiblesses des solutions actuelles. 
+> Le problème doit pouvoir être compris indépendamment de la solution envisagée. -->
+<p>Le problème central réside dans la difficulté à prédire et optimiser l’évolution de l’électroconductivité (EC) dans le bassin anoxique après un transfert d’eau ou un ajout de frass. L’EC est un indicateur global de la concentration en nutriments dissous, mais sa dynamique dépend de multiples facteurs interconnectés et non linéaires.</p>
+<p>Les approches actuelles reposent principalement sur l’observation empirique et des ajustements manuels (ex. modification de la dose de frass). Cela limite la capacité à anticiper les variations du système, à détecter rapidement des anomalies ou à optimiser les paramètres opérationnels. Il est donc nécessaire de développer une approche quantitative capable de modéliser le comportement du système à partir des données disponibles.</p>
 <h3 id="proposition-et-objectifs">Proposition et objectifs<a class="headerlink" href="#proposition-et-objectifs" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>Présentez votre proposition de projet et les objectifs visés. Expliquez en quoi votre approche répond à la problématique identifiée. 
-Assurez-vous d'avoir, dans la mesure du possible, des objectifs mesurables, raisonnnables dans le temps et non redondants entre eux.</p>
-</blockquote>
+<!-->> Présentez votre proposition de projet et les objectifs visés. Expliquez en quoi votre approche répond à la problématique identifiée. 
+> Assurez-vous d'avoir, dans la mesure du possible, des objectifs mesurables, raisonnnables dans le temps et non redondants entre eux.-->
+<p>Plutôt que de développer un nouveau modèle à partir de zéro, ce projet vise à consolider, structurer et optimiser les travaux déjà réalisés sur le système de minéralisation aquaponique.</p>
+<p>L’objectif principal est d’unifier l’extraction des données, le prétraitement et les modèles prédictifs existants dans un pipeline cohérent, reproductible et scientifiquement robuste, tout en identifiant des pistes d’amélioration mesurables.</p>
+<p>Les objectifs spécifiques sont :</p>
+<p>Consolider le pipeline existant en regroupant l’extraction, le nettoyage et la modélisation dans une architecture claire et modulaire.</p>
+<p>Vérifier la reproductibilité et la robustesse des performances annoncées (R², RMSE) sur des périodes temporelles distinctes.</p>
+<p>Identifier et corriger les faiblesses méthodologiques (surajustement potentiel, redondance de variables, dépendance excessive aux features temporelles).</p>
+<p>Proposer au moins une amélioration mesurable, telle qu’une réduction du RMSE, une meilleure généralisation temporelle ou une simplification du modèle sans perte significative de performance.</p>
+<p>Renforcer l’interprétabilité et la cohérence scientifique des résultats afin de soutenir les décisions opérationnelles.</p>
 <h3 id="methodologie">Méthodologie<a class="headerlink" href="#methodologie" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>Expliquez comment vous comptez aborder le projet : démarche générale, grandes étapes prévues, itérations, types de validations envisagées.</p>
-</blockquote>
+<!-->> Expliquez comment vous comptez aborder le projet : démarche générale, grandes étapes prévues, itérations, types de validations envisagées. -->
+<ol>
+<li>Audit technique initial</li>
+</ol>
+<p>Analyse détaillée des scripts existants (extraction InfluxDB/API, correction des données, ingénierie des variables, modèles prédictifs).
+Identification des dépendances, incohérences ou étapes redondantes.</p>
+<ol>
+<li>Consolidation du pipeline</li>
+</ol>
+<p>Centralisation des étapes dans un workflow clair et reproductible</p>
+<p>Standardisation des étapes de prétraitement</p>
+<p>Vérification de la cohérence des variables utilisées</p>
+<p>L’objectif est de transformer un ensemble de scripts fonctionnels en un pipeline structuré et documenté.</p>
+<ol>
+<li>Validation des performances existantes</li>
+</ol>
+<p>Reproduction des résultats précédemment obtenus en respectant une séparation temporelle stricte des données.
+Comparaison des métriques sur différents ensembles (train/validation/test).</p>
+<ol>
+<li>Analyse critique et améliorations</li>
+</ol>
+<p>Étude de l’importance des variables</p>
+<p>Analyse du risque de surajustement</p>
+<p>Test d’alternatives simples (réduction de features, régularisation, modèles plus parcimonieux)</p>
+<p>Évaluation de la stabilité des prédictions lors de nouveaux cycles</p>
+<p>L’approche est itérative : chaque modification est testée quantitativement avant validation.</p>
 <h3 id="validation-et-evaluation">Validation et Évaluation<a class="headerlink" href="#validation-et-evaluation" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>Indiquez comment vous évaluerez que votre solution répond aux objectifs du projet (ex. scénarios d’usage, tests, retours utilisateurs, indicateurs qualitatifs ou quantitatifs).</p>
-</blockquote>
+<!-->> Indiquez comment vous évaluerez que votre solution répond aux objectifs du projet (ex. scénarios d’usage, tests, retours utilisateurs, indicateurs qualitatifs ou quantitatifs).-->
+<ol>
+<li>Audit technique initial</li>
+</ol>
+<p>Analyse détaillée des scripts existants (extraction InfluxDB/API, correction des données, ingénierie des variables, modèles prédictifs).
+Identification des dépendances, incohérences ou étapes redondantes.</p>
+<ol>
+<li>Consolidation du pipeline</li>
+</ol>
+<p>Centralisation des étapes dans un workflow clair et reproductible</p>
+<p>Standardisation des étapes de prétraitement</p>
+<p>Vérification de la cohérence des variables utilisées</p>
+<p>L’objectif est de transformer un ensemble de scripts fonctionnels en un pipeline structuré et documenté.</p>
+<ol>
+<li>Validation des performances existantes</li>
+</ol>
+<p>Reproduction des résultats précédemment obtenus en respectant une séparation temporelle stricte des données.
+Comparaison des métriques sur différents ensembles (train/validation/test).</p>
+<ol>
+<li>Analyse critique et améliorations</li>
+</ol>
+<p>Étude de l’importance des variables</p>
+<p>Analyse du risque de surajustement</p>
+<p>Test d’alternatives simples (réduction de features, régularisation, modèles plus parcimonieux)</p>
+<p>Évaluation de la stabilité des prédictions lors de nouveaux cycles</p>
+<p>L’approche est itérative : chaque modification est testée quantitativement avant validation.</p>
+<p>Validation et Évaluation</p>
+<p>L’évaluation du projet repose sur des critères quantitatifs et méthodologiques.</p>
+<ol>
+<li>Indicateurs de performance</li>
+</ol>
+<p>Les modèles seront évalués à l’aide de :</p>
+<p>RMSE (erreur quadratique moyenne)</p>
+<p>MAE (erreur absolue moyenne)</p>
+<p>R² (coefficient de détermination)</p>
+<p>Une amélioration sera considérée pertinente si elle :</p>
+<p>réduit significativement le RMSE sur des données futures,</p>
+<p>améliore la stabilité des prédictions,</p>
+<p>ou maintient la performance tout en simplifiant le modèle.</p>
+<ol>
+<li>Robustesse temporelle</li>
+</ol>
+<p>Une séparation chronologique stricte sera utilisée afin de simuler un déploiement réel.
+Le modèle ne devra pas être évalué sur des données déjà vues.</p>
+<ol>
+<li>Reproductibilité</li>
+</ol>
+<p>Le pipeline consolidé devra permettre de :</p>
+<p>reproduire les résultats à partir des données brutes,</p>
+<p>exécuter l’ensemble du processus sans intervention manuelle complexe.</p>
+<ol>
+<li>Pertinence opérationnelle</li>
+</ol>
+<p>Enfin, l’évaluation tiendra compte de la capacité du système à :</p>
+<p>détecter des écarts anormaux,</p>
+<p>fournir des prédictions cohérentes lors de nouveaux cycles,</p>
+<p>soutenir les recommandations opérationnelles existantes.</p>
 <h2 id="equipe">Équipe<a class="headerlink" href="#equipe" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>Présentez les membres de l’équipe et le rôle principal de chacun dans le projet.</p>
-</blockquote>
+<p>Je suis le seul membre de mon equipe.</p>
 <h2 id="echeancier">Échéancier<a class="headerlink" href="#echeancier" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
