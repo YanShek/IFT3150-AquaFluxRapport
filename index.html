@@ -985,20 +985,20 @@
 <strong>Collaborateur(s):</strong> <!-- Nom de(s) collaborateur(s) et partenaire(s)` -->  </p>
 </div>
 <h2 id="description-du-projet">Description du projet<a class="headerlink" href="#description-du-projet" title="Permanent link">&para;</a></h2>
-<!-- >> :bulb: N'oubliez pas d'effacer ou mettre en commentaires les notes (`>`) en début de section -->
+<!-- > :bulb: N'oubliez pas d'effacer ou mettre en commentaires les notes (`>`) en début de section -->
 <p>L’aquaponie combine l’aquaculture et l’hydroponie en recyclant l’eau des bassins à poissons pour nourrir les plantes. Un élément clé de ce processus est la minéralisation, qui transforme les déchets organiques en nutriments assimilables par les plantes. Ce traitement s'effectue dans un réservoir anaérobie, dont le comportement est difficile à modéliser, mais qui peut être abordé comme une boîte noire, en se concentrant uniquement sur les composés en entrée et en sortie.</p>
 <h3 id="contexte">Contexte<a class="headerlink" href="#contexte" title="Permanent link">&para;</a></h3>
-<!-- >> Présentez le contexte général dans lequel s’inscrit votre projet (social, organisationnel, technologique, éducatif, environnemental, etc.). -->
+<!-- > Présentez le contexte général dans lequel s’inscrit votre projet (social, organisationnel, technologique, éducatif, environnemental, etc.). -->
 <p>Ce projet s’inscrit dans un contexte environnemental et technologique visant à développer des systèmes alimentaires urbains plus durables. L’entreprise ÉAU (Écosystèmes Alimentaires Urbains) exploite un système aquaponique intégrant un réacteur de minéralisation pour optimiser le recyclage interne des nutriments. Cependant, le fonctionnement de ce réservoir repose sur des dynamiques biologiques et physico-chimiques complexes, influencées par la température, la quantité de frass ajouté et l’activité bactérienne.</p>
 <p>Sur le plan technologique, le système génère un grand volume de données issues de capteurs (électroconductivité, température, pH, ORP) stockées dans une base de données temporelle. Ce projet s’inscrit donc également dans une démarche de valorisation des données par l’analyse et l’apprentissage automatique afin d’améliorer la compréhension et le contrôle du système.</p>
 <h3 id="problematique">Problématique<a class="headerlink" href="#problematique" title="Permanent link">&para;</a></h3>
-<!-- >> Décrivez le problème central ou la question de recherche que votre projet cherche à adresser, pourquoi s'y intéresser et les faiblesses des solutions actuelles. 
-> Le problème doit pouvoir être compris indépendamment de la solution envisagée. -->
+<!-- > Décrivez le problème central ou la question de recherche que votre projet cherche à adresser, pourquoi s'y intéresser et les faiblesses des solutions actuelles. 
+ Le problème doit pouvoir être compris indépendamment de la solution envisagée. -->
 <p>Le problème central réside dans la difficulté à prédire et optimiser l’évolution de l’électroconductivité (EC) dans le bassin anoxique après un transfert d’eau ou un ajout de frass. L’EC est un indicateur global de la concentration en nutriments dissous, mais sa dynamique dépend de multiples facteurs interconnectés et non linéaires.</p>
 <p>Les approches actuelles reposent principalement sur l’observation empirique et des ajustements manuels (ex. modification de la dose de frass). Cela limite la capacité à anticiper les variations du système, à détecter rapidement des anomalies ou à optimiser les paramètres opérationnels. Il est donc nécessaire de développer une approche quantitative capable de modéliser le comportement du système à partir des données disponibles.</p>
 <h3 id="proposition-et-objectifs">Proposition et objectifs<a class="headerlink" href="#proposition-et-objectifs" title="Permanent link">&para;</a></h3>
-<!-->> Présentez votre proposition de projet et les objectifs visés. Expliquez en quoi votre approche répond à la problématique identifiée. 
-> Assurez-vous d'avoir, dans la mesure du possible, des objectifs mesurables, raisonnnables dans le temps et non redondants entre eux.-->
+<!--> Présentez votre proposition de projet et les objectifs visés. Expliquez en quoi votre approche répond à la problématique identifiée. 
+Assurez-vous d'avoir, dans la mesure du possible, des objectifs mesurables, raisonnnables dans le temps et non redondants entre eux.-->
 <p>Plutôt que de développer un nouveau modèle à partir de zéro, ce projet vise à consolider, structurer et optimiser les travaux déjà réalisés sur le système de minéralisation aquaponique.</p>
 <p>L’objectif principal est d’unifier l’extraction des données, le prétraitement et les modèles prédictifs existants dans un pipeline cohérent, reproductible et scientifiquement robuste, tout en identifiant des pistes d’amélioration mesurables.</p>
 <p>Les objectifs spécifiques sont :</p>
@@ -1008,7 +1008,7 @@
 <p>Proposer au moins une amélioration mesurable, telle qu’une réduction du RMSE, une meilleure généralisation temporelle ou une simplification du modèle sans perte significative de performance.</p>
 <p>Renforcer l’interprétabilité et la cohérence scientifique des résultats afin de soutenir les décisions opérationnelles.</p>
 <h3 id="methodologie">Méthodologie<a class="headerlink" href="#methodologie" title="Permanent link">&para;</a></h3>
-<!-->> Expliquez comment vous comptez aborder le projet : démarche générale, grandes étapes prévues, itérations, types de validations envisagées. -->
+<!--> Expliquez comment vous comptez aborder le projet : démarche générale, grandes étapes prévues, itérations, types de validations envisagées. -->
 <ol>
 <li>Audit technique initial</li>
 </ol>
@@ -1035,7 +1035,7 @@ Comparaison des métriques sur différents ensembles (train/validation/test).</p
 <p>Évaluation de la stabilité des prédictions lors de nouveaux cycles</p>
 <p>L’approche est itérative : chaque modification est testée quantitativement avant validation.</p>
 <h3 id="validation-et-evaluation">Validation et Évaluation<a class="headerlink" href="#validation-et-evaluation" title="Permanent link">&para;</a></h3>
-<!-->> Indiquez comment vous évaluerez que votre solution répond aux objectifs du projet (ex. scénarios d’usage, tests, retours utilisateurs, indicateurs qualitatifs ou quantitatifs).-->
+<!--> Indiquez comment vous évaluerez que votre solution répond aux objectifs du projet (ex. scénarios d’usage, tests, retours utilisateurs, indicateurs qualitatifs ou quantitatifs).-->
 <ol>
 <li>Audit technique initial</li>
 </ol>
