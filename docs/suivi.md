@@ -102,3 +102,18 @@ Résolution du probleme en utilisant les outils développeurs du navigateur.
 - Il y avait plusieurs fichiers qui essayait d'accomplir une meme tache, mais il y a eu des mises a jours de la base de donnee rendant ces fonctionnalites invalide.
 - J'avais essaye de comprendre des fonctionnalites depreciees des fichiers pythons pour le projet.
 
+
+## Semaine 8 (11-17)
+### Objectifs de la période
+- Faire un modele de prediction pour la temperature manquante et ajouter aux données.
+
+### Travail réalisé
+- Reutilisation du code et adaptation pour notre contexte pour predire la temperature du bassin anoxique manquante.
+- Modele de prediction pour predire la temperature de la solution nutritive.
+- Ajout de la mesure de la temperature de l'air dans le fichier de donnees bruts.
+
+### Décisions et ajustements
+- Comme le code de la prediction est fait pour les données rééchantillonées, j'ai du modifier le code existant pour mon fichier particulier.
+
+### Difficultés rencontrées
+- Le code est fait pour le rééchantillonage donc les données pour la température du bassin 6 et 8
