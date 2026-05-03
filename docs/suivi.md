@@ -195,24 +195,94 @@ Résolution du probleme en utilisant les outils développeurs du navigateur.
 - Réorganiser les notebooks et les notes de travail utiles à la remise finale
 
 ### Travail réalisé
-- Semaine en cours au 26 mars 2026; entrée à compléter à mesure que le travail est poussé ou documenté
+- Consolidation de la documentation autour de la pipeline de donnees et du pretraitement.
+- Mise en ordre des notebooks de traitement pour mieux distinguer extraction, nettoyage, donnees brutes et table analytique.
+- Clarification du role de `df_main.csv` comme table principale pour les analyses et la modelisation.
 
 ### Décisions et ajustements
-- Garder cette semaine ouverte pour éviter d'annoncer comme terminé un travail non encore versionné
+- Mettre la documentation technique directement dans le depot AquaFlux pour que le workflow soit plus facile a reprendre.
+- Garder les anciens notebooks comme reference, mais faire ressortir les fichiers qui servent vraiment dans la pipeline actuelle.
 
 ### Difficultés rencontrées
-- Documenter fidèlement l'avancement quand une partie du travail n'est pas encore visible dans le dépôt
+- Plusieurs fichiers historiques se recoupent, donc il faut documenter ce qui est encore utile sans effacer trop vite le contexte herite.
 
-## Semaine 11 (31-7 mars)
+## Semaine 12 (31 mars - 6 avril)
 ### Objectifs de la période
-- Documenter la pipeline complète des traitements de donnees
-- Réorganiser les notebooks et les notes de travail utiles à la remise finale
+- Stabiliser le workflow de traitement brut
+- Preparer une sortie unique plus simple a reutiliser
 
 ### Travail réalisé
-- Semaine en cours au 26 mars 2026; entrée à compléter à mesure que le travail est poussé ou documenté
+- Analyse du notebook `raw_data_processed.ipynb` pour identifier les etapes de transformation necessaires.
+- Debut de la separation entre les transformations de base et les enrichissements MAIA.
+- Travail sur la logique de fusion des mesures tres proches dans le temps.
 
 ### Décisions et ajustements
-- Garder cette semaine ouverte pour éviter d'annoncer comme terminé un travail non encore versionné
+- Avancer vers un seul fichier nettoye final plutot que plusieurs checkpoints intermediaires difficiles a suivre.
+- Conserver davantage de resolution temporelle avant les etapes de reechantillonnage.
 
 ### Difficultés rencontrées
-- Documenter fidèlement l'avancement quand une partie du travail n'est pas encore visible dans le dépôt
+- Les mesures des capteurs ne sont pas toutes enregistrees exactement au meme instant, ce qui rend les fusions temporelles sensibles aux seuils choisis.
+
+## Semaine 13 (7-13 avril)
+### Objectifs de la période
+- Rafraichir les donnees MAIA utiles a la pipeline
+- Mieux integrer les evenements de frass et de transfert d'eau
+- Transformer le travail de prediction de temperature en pipeline reutilisable
+
+### Travail réalisé
+- Mise a jour des fichiers MAIA utilises pour les transferts d'eau et les ajouts de frass.
+- Preparation des sorties `H2O-AQ_MIN_latest.csv` et `frass_sorted_0413.csv`.
+- Adaptation des etapes de merge pour que `water_transfer` et `quantity_frass` puissent etre ajoutes separement a `dataClean.csv`.
+- Remplacement progressif du workflow de prediction de temperature par le script `temp_prediction_pipeline.py`.
+- Ajout d'une sortie `dataClean_temp8_pred.csv` pour remplir les valeurs manquantes de `TEMP-EAU_8` en conservant les mesures existantes.
+- Ajout d'une sortie optionnelle `df_main_temp8_pred.csv` pour tester l'effet de la temperature reconstruite sur la modelisation de l'EC.
+
+### Décisions et ajustements
+- Garder les merges MAIA comme cellules ou etapes autonomes afin de pouvoir rafraichir les evenements sans relancer tout le traitement brut.
+- Utiliser les fichiers MAIA les plus recents comme reference pour les fusions aval.
+- Sortir la prediction de temperature d'un notebook afin de la rendre plus reproductible.
+
+### Difficultés rencontrées
+- Le telechargement MAIA n'est pas entierement automatise pour tous les types de donnees, donc une partie du workflow demande encore une verification manuelle.
+- Il fallait eviter de remplacer des temperatures mesurees par des predictions et ne remplir que les valeurs manquantes.
+- Les performances du modele de temperature dependent fortement de l'alignement entre `TEMP-EAU_6`, `TEMP-EAU_8` et `TEMP-AIR_12`.
+
+## Semaine 14 (14-20 avril)
+### Objectifs de la période
+- Corriger la validation du notebook de prediction EC
+- Eviter que le modele utilise des donnees futures pour predire le passe
+
+### Travail réalisé
+- Modification de `anox_ec_prediction_lr.ipynb` pour que les phases d'entrainement, validation et test suivent un decoupage chronologique.
+- Remplacement de l'ancien split aleatoire afin de ne pas utiliser de donnees futures pour predire des observations passees.
+- Verification du role des differents fichiers de prediction EC dans le depot.
+- Constat que le script actuel de prediction EC mentionne dans le workflow etait absent du depot.
+- Annulation du travail fait dans le notebook lorsque j'ai constate qu'il etait devenu deprecie par rapport au workflow attendu.
+- Mise a jour de la documentation pour signaler que ce notebook ne doit plus etre considere comme la pipeline principale de prediction EC.
+
+### Décisions et ajustements
+- Conserver l'idee du decoupage chronologique comme critere de validation important pour les modeles temporels.
+- Ne pas continuer a investir dans un notebook deprecie
+- Ajuster la documentation pour refleter l'etat reel du depot plutot qu'un workflow idealise.
+
+### Difficultés rencontrées
+- Le notebook contenait encore de la logique utile, mais il ne representait plus clairement la source de verite du projet.
+- L'absence du script de prediction EC a force une correction de trajectoire apres avoir deja commence a modifier le notebook et la documentation.
+
+## Semaine 15 (21-27 avril)
+### Objectifs de la période
+- Rendre la structure du depot plus lisible
+- Documenter les workflows principaux pour une nouvelle personne sur le projet
+
+### Travail réalisé
+- Refactorisation de la structure du code pour ameliorer la lisibilite et la maintenabilite.
+- Ajout et mise a jour de documents de reference: `ONBOARDING.md`, `DATA_PIPELINE.md`, `MAIA_RUNBOOK.md`, `SYSTEM_MAP.md`, `VALIDATION.md` et `PROJECT_PIPELINE_MERMAID.md`.
+- Mise a jour du `README.MD` pour expliquer les points d'entree principaux du projet.
+- Documentation des interactions entre fichiers, scripts, notebooks, donnees InfluxDB et donnees MAIA.
+
+### Décisions et ajustements
+- Faire du dossier `Documentation/` la source principale pour expliquer la pipeline et les choix techniques.
+- Distinguer clairement la branche analytique historique basee sur `df_main.csv` et la branche brute basee sur `dataClean.csv`.
+
+### Difficultés rencontrées
+- La documentation devait rester assez complete pour expliquer le projet, mais pas devenir une copie ligne par ligne des notebooks.
