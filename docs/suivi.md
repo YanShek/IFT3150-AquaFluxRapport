@@ -85,7 +85,7 @@ Résolution du probleme en utilisant les outils développeurs du navigateur.
 ### Difficultés rencontrées
 - Je ne trouvais pas où se trouvait les données sur l'ajout de frass et donc j'ai perdu du temps à fouiller dans Influx et dans les 'sources' du site MAIA.
 
-## Semaine 5 (10-17)
+## Semaine 5 (10-16 février)
 ### Objectifs de la période
 - Creer un fichier de donnees bruts avec la temperature non-normalise
 
@@ -103,17 +103,116 @@ Résolution du probleme en utilisant les outils développeurs du navigateur.
 - J'avais essaye de comprendre des fonctionnalites depreciees des fichiers pythons pour le projet.
 
 
-## Semaine 8 (11-17)
+## Semaine 6 (17-23 février)
 ### Objectifs de la période
-- Faire un modele de prediction pour la temperature manquante et ajouter aux données.
+- Tester et valider le travail hérité
+- Commencer le nettoyage et la fusion des donnees brutes
 
 ### Travail réalisé
-- Reutilisation du code et adaptation pour notre contexte pour predire la temperature du bassin anoxique manquante.
-- Modele de prediction pour predire la temperature de la solution nutritive.
-- Ajout de la mesure de la temperature de l'air dans le fichier de donnees bruts.
+- Vérification de la cohérence des scripts et des données déjà récupérées
+- Début du nettoyage des données brutes et du regroupement des mesures proches dans le temps
+- Poursuite de la structuration d'un workflow plus clair pour la suite du projet
 
 ### Décisions et ajustements
-- Comme le code de la prediction est fait pour les données rééchantillonées, j'ai du modifier le code existant pour mon fichier particulier.
+- Avancer vers un pipeline progressif plutôt qu'un ensemble de scripts isolés
+- Tester une fenêtre de fusion courte pour limiter la fragmentation des mesures
 
 ### Difficultés rencontrées
-- Le code est fait pour le rééchantillonage donc les données pour la température du bassin 6 et 8
+- Alignement de capteurs mesurant presque au même moment mais avec un léger décalage temporel
+
+## Semaine 7 (24 février - 2 mars)
+
+### Objectifs de la période
+- Stabiliser le nettoyage des données
+- Préparer les données pour la modélisation
+
+### Travail réalisé
+- Consolidation des étapes de nettoyage et validation des sorties intermédiaires
+- Préparation des données en vue des premiers essais de modélisation
+- Detection des "flush" et deletion de ces rangees. 
+
+### Décisions et ajustements
+- Conserver une séparation claire entre extraction, nettoyage et modélisation
+- Continuer à simplifier les étapes héritées pour ne garder que celles qui sont reproductibles
+
+### Difficultés rencontrées
+- Distinguer les transformations nécessaires des étapes devenues obsolètes
+
+## Semaine 8 (3-9 mars)
+
+### Objectifs de la période
+- Clarifier la structure du pipeline
+- Amorcer le travail sur la prédiction de température
+
+### Travail réalisé
+- Poursuite de la consolidation du pipeline existant
+- Début de l'adaptation du travail de prédiction de température au contexte actuel
+- Réflexion sur l'utilisation de données brutes plutôt que seulement de données rééchantillonnées
+
+### Décisions et ajustements
+- Favoriser une structure de travail plus lisible et plus maintenable
+- Éviter de dépendre d'outils ou de fichiers intermédiaires devenus fragiles
+
+### Difficultés rencontrées
+- Avancer malgré une documentation technique partielle du matériel hérité
+
+## Semaine 9 (10-16 mars)
+
+### Objectifs de la période
+- Faire un premier bloc de modélisation de température exploitable
+- Ajouter des variables de température utiles au jeu de données
+
+### Travail réalisé
+- Réutilisation et adaptation du code existant pour prédire une température manquante du bassin anoxique
+- Travail sur un modèle de prédiction pour la température de la solution nutritive
+- Ajout de la température de l'air dans le fichier de données brutes
+
+### Décisions et ajustements
+- Adapter le code de prédiction, initialement pensé pour des données rééchantillonnées, à un fichier de données plus proche du brut
+
+### Difficultés rencontrées
+- Le code hérité repose sur du rééchantillonnage, ce qui complique le traitement des températures des bassins 6 et 8
+
+## Semaine 10 (17-23 mars)
+
+### Objectifs de la période
+- Formaliser plus clairement le cadrage du projet
+- Consolider dans la documentation les avancées sur la température
+
+### Travail réalisé
+- Ajout au suivi du travail de modélisation autour des températures manquantes et de l'intégration de la température de l'air
+
+### Décisions et ajustements
+- Mettre l'accent sur la consolidation du pipeline existant plutôt que sur un redéveloppement complet
+- Rendre explicites les critères de validation et de reproductibilité du projet
+
+### Difficultés rencontrées
+- Transformer des avancées techniques dispersées en documentation cohérente et défendable
+
+## Semaine 11 (24-30 mars)
+### Objectifs de la période
+- Documenter la pipeline complète des traitements de donnees
+- Réorganiser les notebooks et les notes de travail utiles à la remise finale
+
+### Travail réalisé
+- Semaine en cours au 26 mars 2026; entrée à compléter à mesure que le travail est poussé ou documenté
+
+### Décisions et ajustements
+- Garder cette semaine ouverte pour éviter d'annoncer comme terminé un travail non encore versionné
+
+### Difficultés rencontrées
+- Documenter fidèlement l'avancement quand une partie du travail n'est pas encore visible dans le dépôt
+
+## Semaine 11 (31-7 mars)
+### Objectifs de la période
+- Documenter la pipeline complète des traitements de donnees
+- Réorganiser les notebooks et les notes de travail utiles à la remise finale
+
+### Travail réalisé
+- Semaine en cours au 26 mars 2026; entrée à compléter à mesure que le travail est poussé ou documenté
+
+### Décisions et ajustements
+- Garder cette semaine ouverte pour éviter d'annoncer comme terminé un travail non encore versionné
+
+### Difficultés rencontrées
+- Documenter fidèlement l'avancement quand une partie du travail n'est pas encore visible dans le dépôt
